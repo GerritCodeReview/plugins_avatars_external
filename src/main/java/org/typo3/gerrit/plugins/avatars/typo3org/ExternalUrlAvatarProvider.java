@@ -75,7 +75,7 @@ public class ExternalUrlAvatarProvider implements AvatarProvider {
     }
 
     // replace the %s inside the URL with the username
-    String url = String.format(externalAvatarUrl, username);
+    String url = externalAvatarUrl.replaceFirst("%s", username);
 
     return url;
   }
