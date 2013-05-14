@@ -39,9 +39,11 @@ import javax.annotation.Nullable;
 @Singleton
 public class ExternalUrlAvatarProvider implements AvatarProvider {
 
+  private static final String REPLACE_MARKER = "%s";
+
   private final boolean ssl;
   private String externalAvatarUrl;
-  private final String avatarChangeUrl;
+  private String avatarChangeUrl;
 
   @Inject
   ExternalUrlAvatarProvider(@CanonicalWebUrl @Nullable String canonicalUrl,
@@ -53,19 +55,6 @@ public class ExternalUrlAvatarProvider implements AvatarProvider {
 
   @Override
   public String getUrl(IdentifiedUser forUser, int imageSize) {
-    String username = forUser.getUserName();
-
-    if (username == null) {
-      return null;
-    }
-
-    try {
-      username = URLEncoder.encode(username, "UTF-8");
-    } catch (UnsupportedEncodingException e) {
-      Logger log = LoggerFactory.getLogger(ExternalUrlAvatarProvider.class);
-      log.warn("Weird thing, UTF-8 as encoding is not supported");
-      return null;
-    }
 
     if (externalAvatarUrl == null) {
       Logger log = LoggerFactory.getLogger(ExternalUrlAvatarProvider.class);
@@ -73,9 +62,9 @@ public class ExternalUrlAvatarProvider implements AvatarProvider {
       return null;
     }
 
-    if (!externalAvatarUrl.contains("%s")) {
+    if (!externalAvatarUrl.contains(REPLACE_MARKER)) {
         Logger log = LoggerFactory.getLogger(ExternalUrlAvatarProvider.class);
-        log.warn("Avatar provider url '" + externalAvatarUrl + "' does not contain %s, so cannot replace it with username");
+        log.warn("Avatar provider url '" + externalAvatarUrl + "' does not contain " + REPLACE_MARKER + ", so cannot replace it with username");
         return null;
     }
 
@@ -83,14 +72,31 @@ public class ExternalUrlAvatarProvider implements AvatarProvider {
     	externalAvatarUrl = externalAvatarUrl.replace("http://", "https://");
     }
 
-    // replace the %s inside the URL with the username
-    String url = externalAvatarUrl.replaceFirst("%s", username);
-
-    return url;
+    return replaceInUrl(externalAvatarUrl, forUser.getUserName());
   }
 
   @Override
   public String getChangeAvatarUrl(IdentifiedUser forUser) {
-    return avatarChangeUrl;
+
+    return replaceInUrl(avatarChangeUrl, forUser.getUserName());
+  }
+
+
+  private String replaceInUrl(String url, String replacement) {
+
+    if (replacement == null || url == null || url.contains(REPLACE_MARKER) == false) {
+      return url;
+    }
+
+    String encodedReplacement = null;
+    try {
+      encodedReplacement = URLEncoder.encode(replacement, "UTF-8");
+    } catch (UnsupportedEncodingException e) {
+      Logger log = LoggerFactory.getLogger(ExternalUrlAvatarProvider.class);
+      log.warn("Weird thing, UTF-8 as encoding is not supported");
+      return null;
+    }
+
+    return url.replace(REPLACE_MARKER, encodedReplacement);
   }
 }
