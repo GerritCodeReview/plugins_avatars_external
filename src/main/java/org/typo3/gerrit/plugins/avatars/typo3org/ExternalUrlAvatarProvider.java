@@ -29,6 +29,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import java.io.UnsupportedEncodingException;
+import java.net.URLEncoder;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 
@@ -55,6 +56,14 @@ public class ExternalUrlAvatarProvider implements AvatarProvider {
     String username = forUser.getUserName();
 
     if (username == null) {
+      return null;
+    }
+
+    try {
+      username = URLEncoder.encode(username, "UTF-8");
+    } catch (UnsupportedEncodingException e) {
+      Logger log = LoggerFactory.getLogger(ExternalUrlAvatarProvider.class);
+      log.warn("Weird thing, UTF-8 as encoding is not supported");
       return null;
     }
 
