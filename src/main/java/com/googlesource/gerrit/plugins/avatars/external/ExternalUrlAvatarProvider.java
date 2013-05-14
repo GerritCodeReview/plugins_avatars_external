@@ -47,7 +47,7 @@ public class ExternalUrlAvatarProvider implements AvatarProvider {
 
   @Inject
   ExternalUrlAvatarProvider(@CanonicalWebUrl @Nullable String canonicalUrl,
-		  @GerritServerConfig Config cfg) {
+      @GerritServerConfig Config cfg) {
     externalAvatarUrl = cfg.getString("avatar", null, "url");
     avatarChangeUrl = cfg.getString("avatar", null, "changeUrl");
     ssl = canonicalUrl != null && canonicalUrl.startsWith("https://");
@@ -62,16 +62,20 @@ public class ExternalUrlAvatarProvider implements AvatarProvider {
       return null;
     }
 
-    // it is unrealistic that all users share the same avatar image, thus we're warning if we can't find our marker (%s)
+    // it is unrealistic that all users share the same avatar image, thus we're
+    // warning if we can't find our marker (%s)
     if (!externalAvatarUrl.contains(REPLACE_MARKER)) {
-        Logger log = LoggerFactory.getLogger(ExternalUrlAvatarProvider.class);
-        log.warn("Avatar provider url '" + externalAvatarUrl + "' does not contain " + REPLACE_MARKER + ", so cannot replace it with username");
-        return null;
+      Logger log = LoggerFactory.getLogger(ExternalUrlAvatarProvider.class);
+      log.warn("Avatar provider url '" + externalAvatarUrl
+          + "' does not contain " + REPLACE_MARKER
+          + ", so cannot replace it with username");
+      return null;
     }
 
-    // as the Gerrit only sends a 302 Found, the avatar is loaded by the user agent and thus SSL matters for the avatar image, if Gerrit uses SSL
+    // as the Gerrit only sends a 302 Found, the avatar is loaded by the user
+    // agent and thus SSL matters for the avatar image, if Gerrit uses SSL
     if (ssl && externalAvatarUrl.startsWith("http://")) {
-    	externalAvatarUrl = externalAvatarUrl.replace("http://", "https://");
+      externalAvatarUrl = externalAvatarUrl.replace("http://", "https://");
     }
     return replaceInUrl(externalAvatarUrl, forUser.getUserName());
   }
@@ -83,14 +87,17 @@ public class ExternalUrlAvatarProvider implements AvatarProvider {
   }
 
   /**
-   * Takes #{replacement} and substitutes the marker REPLACE_MARKER in #{url} after it has been URL encoded
+   * Takes #{replacement} and substitutes the marker REPLACE_MARKER in #{url}
+   * after it has been URL encoded
+   *
    * @param url The URL, usually containing #{REPLACE_MARKER}
    * @param replacement String to be put inside
    * @return new URL
    */
   private String replaceInUrl(String url, String replacement) {
 
-    if (replacement == null || url == null || url.contains(REPLACE_MARKER) == false) {
+    if (replacement == null || url == null
+        || url.contains(REPLACE_MARKER) == false) {
       return url;
     }
 
