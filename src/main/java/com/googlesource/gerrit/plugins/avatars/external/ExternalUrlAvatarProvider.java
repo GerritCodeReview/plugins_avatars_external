@@ -14,6 +14,7 @@
 
 package com.googlesource.gerrit.plugins.avatars.external;
 
+import com.google.gerrit.common.Nullable;
 import com.google.gerrit.extensions.annotations.Listen;
 import com.google.gerrit.reviewdb.client.AccountExternalId;
 import com.google.gerrit.reviewdb.client.AccountExternalId.Key;
@@ -32,8 +33,6 @@ import java.io.UnsupportedEncodingException;
 import java.net.URLEncoder;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
-
-import javax.annotation.Nullable;
 
 @Listen
 @Singleton
