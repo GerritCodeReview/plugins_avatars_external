@@ -72,7 +72,11 @@ public class ExternalUrlAvatarProvider implements AvatarProvider {
     if (ssl && externalAvatarUrl.startsWith("http://")) {
       externalAvatarUrl = externalAvatarUrl.replace("http://", "https://");
     }
-    return replaceInUrl(externalAvatarUrl, forUser.getUserName());
+    String avatarUrl = replaceInUrl(externalAvatarUrl, forUser.getUserName());
+    if (imageSize > 0) {
+      avatarUrl += "?s=" + imageSize + "x" + imageSize;
+    }
+    return avatarUrl;
   }
 
   @Override
