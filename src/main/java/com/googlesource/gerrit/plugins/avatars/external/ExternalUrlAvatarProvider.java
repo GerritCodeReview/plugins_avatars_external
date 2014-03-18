@@ -37,12 +37,14 @@ public class ExternalUrlAvatarProvider implements AvatarProvider {
   private final boolean ssl;
   private String externalAvatarUrl;
   private String avatarChangeUrl;
+  private String sizeParameter;
 
   @Inject
   ExternalUrlAvatarProvider(@CanonicalWebUrl @Nullable String canonicalUrl,
       @GerritServerConfig Config cfg) {
     externalAvatarUrl = cfg.getString("avatar", null, "url");
     avatarChangeUrl = cfg.getString("avatar", null, "changeUrl");
+    sizeParameter = cfg.getString("avatar", null, "sizeParameter");
     ssl = canonicalUrl != null && canonicalUrl.startsWith("https://");
   }
 
@@ -70,7 +72,14 @@ public class ExternalUrlAvatarProvider implements AvatarProvider {
     if (ssl && externalAvatarUrl.startsWith("http://")) {
       externalAvatarUrl = externalAvatarUrl.replace("http://", "https://");
     }
-    return replaceInUrl(externalAvatarUrl, forUser.getUserName());
+    StringBuilder avatarUrl = new StringBuilder();
+    avatarUrl.append(replaceInUrl(externalAvatarUrl, forUser.getUserName()));
+    if (imageSize > 0 && sizeParameter != null) {
+      avatarUrl.append("?");
+      avatarUrl.append(sizeParameter.replaceAll("\\$\\{size\\}",
+          Integer.toString(imageSize)));
+    }
+    return avatarUrl.toString();
   }
 
   @Override
