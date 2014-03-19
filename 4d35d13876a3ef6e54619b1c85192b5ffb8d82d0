@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3cab959f_7e4c9160",
+        "filename": "src/main/java/com/googlesource/gerrit/plugins/avatars/external/ExternalUrlAvatarProvider.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 77,
+      "author": {
+        "id": 1011123
+      },
+      "writtenOn": "2014-03-19T02:09:48Z",
+      "side": 1,
+      "message": "It is assumed that the provider understands the `?s\u003dNNNxNNN` parameter.  Should this be documented?\n\nIn a follow up change it might be nice to allow this to be configured, i.e. for providers that have some other way of specifying the size.",
+      "range": {
+        "startLine": 77,
+        "startChar": 20,
+        "endLine": 77,
+        "endChar": 54
+      },
+      "revId": "4d35d13876a3ef6e54619b1c85192b5ffb8d82d0",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": false
+    }
+  ]
+}
