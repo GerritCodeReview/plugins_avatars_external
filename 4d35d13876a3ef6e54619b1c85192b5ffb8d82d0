@@ -22,6 +22,30 @@
       "revId": "4d35d13876a3ef6e54619b1c85192b5ffb8d82d0",
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7c026dbc_d8e7ed4f",
+        "filename": "src/main/java/com/googlesource/gerrit/plugins/avatars/external/ExternalUrlAvatarProvider.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 77,
+      "author": {
+        "id": 1001240
+      },
+      "writtenOn": "2014-03-21T14:48:27Z",
+      "side": 1,
+      "message": "This is pretty much the only reason I gave +1 and not +2. I don\u0027t think all providers understand ?s\u003dHxW or whatever the shape is. So this should at least be able to be disabled with a config boolean, or at least documented.",
+      "parentUuid": "3cab959f_7e4c9160",
+      "range": {
+        "startLine": 77,
+        "startChar": 20,
+        "endLine": 77,
+        "endChar": 54
+      },
+      "revId": "4d35d13876a3ef6e54619b1c85192b5ffb8d82d0",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": false
     }
   ]
 }
