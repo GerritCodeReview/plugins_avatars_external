@@ -34,6 +34,24 @@
       "revId": "cef7a66ba13bd02a3779553e5fcf7a87c254bd6a",
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "abb4abb0_c8132f4e",
+        "filename": "src/main/resources/Documentation/build.md",
+        "patchSetId": 4
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 1011323
+      },
+      "writtenOn": "2015-01-20T15:09:16Z",
+      "side": 1,
+      "message": "You mean this one is not OK:\n\n  external-url-avatar-provider\n\nWell i don\u0027t have any opinion on that. And if at all, not in this change.",
+      "parentUuid": "abb4abb0_48009ff8",
+      "revId": "cef7a66ba13bd02a3779553e5fcf7a87c254bd6a",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": false
     }
   ]
 }
