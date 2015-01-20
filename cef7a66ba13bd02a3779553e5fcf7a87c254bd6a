@@ -16,6 +16,24 @@
       "revId": "cef7a66ba13bd02a3779553e5fcf7a87c254bd6a",
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "abb4abb0_48009ff8",
+        "filename": "src/main/resources/Documentation/build.md",
+        "patchSetId": 4
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 1018718
+      },
+      "writtenOn": "2015-01-20T14:44:04Z",
+      "side": 1,
+      "message": "Wow, this comment was not possible to access in the \"Old screen\", I had to switch to \"New screen\" to see it. Your comment is on line 27, but the file only has 26 lines according to the summary, so, I guess it is a bug in the \"New screen\" that you can add comment on a line that does not exist?\n\nAnyway, done.\n\nDo you think I should rename the artifact-id in pom.xml?",
+      "parentUuid": "abb4abb0_28a68bc7",
+      "revId": "cef7a66ba13bd02a3779553e5fcf7a87c254bd6a",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": false
     }
   ]
 }
