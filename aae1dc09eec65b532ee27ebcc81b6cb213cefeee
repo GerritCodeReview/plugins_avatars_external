@@ -25,6 +25,24 @@
     },
     {
       "key": {
+        "uuid": "8bb9a7ac_47296e76",
+        "filename": "src/main/resources/Documentation/build.md",
+        "patchSetId": 3
+      },
+      "lineNbr": 4,
+      "author": {
+        "id": 1018718
+      },
+      "writtenOn": "2015-01-20T13:05:20Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "8bb9a7ac_e710a243",
+      "revId": "aae1dc09eec65b532ee27ebcc81b6cb213cefeee",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "8bb9a7ac_871d265a",
         "filename": "src/main/resources/Documentation/build.md",
         "patchSetId": 3
@@ -42,6 +60,24 @@
         "endLine": 12,
         "endChar": 21
       },
+      "revId": "aae1dc09eec65b532ee27ebcc81b6cb213cefeee",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "8bb9a7ac_672ef281",
+        "filename": "src/main/resources/Documentation/build.md",
+        "patchSetId": 3
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 1018718
+      },
+      "writtenOn": "2015-01-20T13:05:20Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "8bb9a7ac_871d265a",
       "revId": "aae1dc09eec65b532ee27ebcc81b6cb213cefeee",
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
       "unresolved": false
