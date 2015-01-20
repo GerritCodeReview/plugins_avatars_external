@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "8bb9a7ac_e710a243",
+        "filename": "src/main/resources/Documentation/build.md",
+        "patchSetId": 3
+      },
+      "lineNbr": 4,
+      "author": {
+        "id": 1011323
+      },
+      "writtenOn": "2015-01-20T12:47:42Z",
+      "side": 1,
+      "message": "Why not to tell Maven fans, that this plugin can be built with Maven as well? See: [1].\n\n* [1] https://gerrit.googlesource.com/plugins/avatars/external/+/master/pom.xml",
+      "range": {
+        "startLine": 4,
+        "startChar": 0,
+        "endLine": 4,
+        "endChar": 34
+      },
+      "revId": "aae1dc09eec65b532ee27ebcc81b6cb213cefeee",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "8bb9a7ac_871d265a",
+        "filename": "src/main/resources/Documentation/build.md",
+        "patchSetId": 3
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 1011323
+      },
+      "writtenOn": "2015-01-20T12:47:42Z",
+      "side": 1,
+      "message": "Name the jar?",
+      "range": {
+        "startLine": 12,
+        "startChar": 18,
+        "endLine": 12,
+        "endChar": 21
+      },
+      "revId": "aae1dc09eec65b532ee27ebcc81b6cb213cefeee",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": false
+    }
+  ]
+}
