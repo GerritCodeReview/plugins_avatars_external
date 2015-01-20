@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "abb4abb0_28a68bc7",
+        "filename": "src/main/resources/Documentation/build.md",
+        "patchSetId": 4
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 1011323
+      },
+      "writtenOn": "2015-01-20T13:08:02Z",
+      "side": 1,
+      "message": "Tell Maven fans where they can find target file and how it\u0027s called?",
+      "revId": "cef7a66ba13bd02a3779553e5fcf7a87c254bd6a",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": false
+    }
+  ]
+}
