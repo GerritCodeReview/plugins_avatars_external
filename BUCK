@@ -1,5 +1,5 @@
 gerrit_plugin(
-  name = 'avatars-external',
+  name = 'external',
   srcs = glob(['src/main/java/**/*.java']),
   resources = glob(['src/main/resources/**/*']),
   manifest_entries = [
