@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "333689c8_89b41923",
+        "filename": "src/main/java/com/googlesource/gerrit/plugins/avatars/external/ExternalUrlAvatarProvider.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 75,
+      "author": {
+        "id": 1020777
+      },
+      "writtenOn": "2015-07-06T18:57:29Z",
+      "side": 1,
+      "message": "hi",
+      "revId": "503747022c395bae7833e2688b4e26e2d7a99413",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "333689c8_a9b9dd1b",
+        "filename": "src/main/resources/Documentation/config.md",
+        "patchSetId": 2
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 1020777
+      },
+      "writtenOn": "2015-07-06T18:57:29Z",
+      "side": 1,
+      "message": "fine",
+      "revId": "503747022c395bae7833e2688b4e26e2d7a99413",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": false
+    }
+  ]
+}
