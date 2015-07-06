@@ -16,6 +16,7 @@ package com.googlesource.gerrit.plugins.avatars.external;
 
 import com.google.gerrit.common.Nullable;
 import com.google.gerrit.extensions.annotations.Listen;
+import com.google.gerrit.extensions.restapi.Url;
 import com.google.gerrit.server.IdentifiedUser;
 import com.google.gerrit.server.avatar.AvatarProvider;
 import com.google.gerrit.server.config.CanonicalWebUrl;
@@ -26,9 +27,6 @@ import com.google.inject.Singleton;
 import org.eclipse.jgit.lib.Config;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-
-import java.io.UnsupportedEncodingException;
-import java.net.URLEncoder;
 
 @Listen
 @Singleton
@@ -90,22 +88,12 @@ public class ExternalUrlAvatarProvider implements AvatarProvider {
    * @return new URL
    */
   private String replaceInUrl(String url, String replacement) {
-
     if (replacement == null || url == null
         || url.contains(REPLACE_MARKER) == false) {
       return url;
     }
 
     // as we can't assume anything of 'replacement', we're URL encoding it
-    String encodedReplacement = null;
-    try {
-      encodedReplacement = URLEncoder.encode(replacement, "UTF-8");
-    } catch (UnsupportedEncodingException e) {
-      Logger log = LoggerFactory.getLogger(ExternalUrlAvatarProvider.class);
-      log.warn("Weird thing, UTF-8 as encoding is not supported");
-      return null;
-    }
-
-    return url.replace(REPLACE_MARKER, encodedReplacement);
+    return url.replace(REPLACE_MARKER, Url.encode(replacement));
   }
 }
